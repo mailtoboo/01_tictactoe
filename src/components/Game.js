@@ -71,7 +71,16 @@ const Game = () => {
 					</button>
 				</div>
 			</div>
-			<footer style={{ textAlign: 'center' }}>All Rights Reserved</footer>
+			<footer style={{ textAlign: 'center' }}>
+				<span style={{ fontStyle: 'bold' }}>
+					Inspired from Windows 11
+				</span>
+				<br />
+				<br />
+				<span style={{ fontStyle: 'italic', fontSize: '10px' }}>
+					All Rights Reserved
+				</span>
+			</footer>
 		</>
 	);
 };

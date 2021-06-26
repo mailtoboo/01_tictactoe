@@ -28,7 +28,6 @@ body {
 	/* align-items: center; */
 	justify-content: center;
 	min-height: 100vh;
-	padding: 2rem;
 }
 
 h1 {
@@ -52,13 +51,12 @@ h1 {
 
 .squares {
 	background: rgba(255, 255, 255, 0.1);
-	border: none;
 	font-size: 5rem;
 	/* font-weight: 800; */
 	cursor: pointer;
 	outline: none;
 	position: relative;
-	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	/* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); */
 	border-radius: 15px;
 	overflow: hidden;
 	display: flex;
@@ -66,6 +64,36 @@ h1 {
 	align-items: center;
 	border-top: 1 px solid rgba(255, 255, 255, 0.5);
 	border-left: 1 px solid rgba(255, 255, 255, 0.5);
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+	animation-duration: 1s;
+}
+
+.squares:hover {
+	animation-name: bounce;
+	-moz-animation-name: bounce;
+}
+
+@keyframes bounce {
+	0%,
+	100%,
+	20%,
+	50%,
+	80% {
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform: translateY(-30px);
+		transform: translateY(-30px);
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform: translateY(-15px);
+		transform: translateY(-15px);
+	}
 }
 
 .X {
@@ -96,6 +124,8 @@ li {
 	cursor: pointer;
 	padding: 0.5rem;
 	margin: 0.5rem 1rem;
+	font-style: italic;
+	border-radius: 20px;
 }
 
 .grid-container {
