@@ -27,8 +27,8 @@ const Game = () => {
 		setXisNext(step % 2 === 0);
 	};
 
-	const renderMoves = () =>
-		history.map((_step, move) => {
+	const renderMoves = () => {
+		return history.map((_step, move) => {
 			const destination = move ? `Go to move #${move}` : 'Go to Start';
 			return (
 				<li key={move}>
@@ -36,18 +36,42 @@ const Game = () => {
 				</li>
 			);
 		});
+	};
+
+	const clearGame = () => {
+		setHistory([Array(9).fill(null)]);
+		setStepNumber(0);
+		setXisNext(true);
+	};
 
 	return (
 		<>
-			<h1>React Tic Tac Toe - With Hooks</h1>
-			<Board squares={history[stepNumber]} onClick={handleClick} />
-			<div className="info-wrapper">
-				<div>
+			<h1 style={{ textAlign: 'center' }}>Tic Tac Toe</h1>
+			<div className="grid-container">
+				<div className="info-wrapper grid-item">
 					<h3>History</h3>
 					{renderMoves()}
 				</div>
-				<h3>{winner ? 'Winner: ' + winner : 'Next Player: ' + xO}</h3>
+				<div className="grid-item">
+					<Board
+						squares={history[stepNumber]}
+						onClick={handleClick}
+					/>
+				</div>
+				<div className="grid-item">
+					<h3>
+						{winner
+							? 'Winner: ' + winner
+							: history.length > 9
+							? 'Game - Draw'
+							: 'Next Player: ' + xO}
+					</h3>
+					<button className="clear-btn" onClick={clearGame}>
+						Clear
+					</button>
+				</div>
 			</div>
+			<footer style={{ textAlign: 'center' }}>All Rights Reserved</footer>
 		</>
 	);
 };
