@@ -23,7 +23,7 @@ body {
 		#a200ff
 	);
 	color: black;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	display: flex;
 	/* align-items: center; */
 	justify-content: center;
@@ -37,11 +37,12 @@ h1 {
 
 .clear-btn {
 	font-size: 1rem;
+	width: 65px;
+	margin-left: 37% !important;
+	text-align: center;
 }
 
 .board {
-	border: 1rem solid #000;
-	background: #000;
 	width: 500px;
 	height: 500px;
 	display: grid;
@@ -50,19 +51,28 @@ h1 {
 }
 
 .squares {
-	background: #474545;
+	background: rgba(255, 255, 255, 0.1);
 	border: none;
 	font-size: 5rem;
 	/* font-weight: 800; */
 	cursor: pointer;
 	outline: none;
+	position: relative;
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1 px solid rgba(255, 255, 255, 0.5);
+	border-left: 1 px solid rgba(255, 255, 255, 0.5);
 }
 
 .X {
-	color: red;
+	color: rgb(209, 30, 30);
 }
 .O {
-	color: green;
+	color: rgb(76, 228, 38);
 }
 
 .info-wrapper {
